@@ -22,10 +22,11 @@ function incrementGuest(amount) {
 function resetCounts() {
   prevCountsArray.push({ home: homeCount, guest: guestCount });
   console.log(prevCountsArray);
-  let prevCountsElements = prevCountsArray.map((prevCount) => {
-    return `<h4>${prevCount.home} to ${prevCount.guest}</h4>`;
-  });
-  let countElementHTML = prevCountsElements.join("");
+  let countElementHTML = "";
+  prevCountsArray.forEach(
+    (counts) =>
+      (countElementHTML += `<h4>${counts.home} to ${counts.guest}</h4>`)
+  );
   prevCountsEl.innerHTML = countElementHTML;
   homeCount = 0;
   guestCount = 0;
