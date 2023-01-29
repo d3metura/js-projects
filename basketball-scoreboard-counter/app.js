@@ -25,7 +25,8 @@ function resetCounts() {
   let prevCountsElements = prevCountsArray.map((prevCount) => {
     return `<h4>${prevCount.home} to ${prevCount.guest}</h4>`;
   });
-  prevCountsEl.innerHTML = prevCountsElements;
+  let countElementHTML = prevCountsElements.join("");
+  prevCountsEl.innerHTML = countElementHTML;
   homeCount = 0;
   guestCount = 0;
   homeCountEl.textContent = homeCount;
