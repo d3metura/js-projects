@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  gap: 100px;
+}
+
+.prev-counts {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
