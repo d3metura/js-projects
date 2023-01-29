@@ -9,25 +9,29 @@
   </head>
   <body>
     <div class="container">
-      <div>
-        <span>HOME</span>
+      <div class="count-container">
+        <h1 class="team-title">HOME</h1>
         <h2 class="home-count-el">0</h2>
-        <span onClick="incrementHome(1)">+1</span>
-        <span onClick="incrementHome(2)">+2</span>
-        <span onClick="incrementHome(3)">+3</span>
+        <div class="increment-elements">
+          <span onClick="incrementHome(1)">+1</span>
+          <span onClick="incrementHome(2)">+2</span>
+          <span onClick="incrementHome(3)">+3</span>
+        </div>
       </div>
-      <div>
-        <span>GUEST</span>
+      <div class="count-container">
+        <h1 class="team-title">GUEST</h1>
         <h2 class="guest-count-el">0</h2>
-        <span onClick="incrementGuest(1)">+1</span>
-        <span onClick="incrementGuest(2)">+2</span>
-        <span onClick="incrementGuest(3)">+3</span>
+        <div class="increment-elements">
+          <span onClick="incrementGuest(1)">+1</span>
+          <span onClick="incrementGuest(2)">+2</span>
+          <span onClick="incrementGuest(3)">+3</span>
+        </div>
       </div>
-      <div>
-        <h3>Previous Counts:</h3>
-        <div class="prev-counts-el"></div>
-      </div>
+    </div>
+    <div class="prev-counts-container">
       <button onClick="resetCounts()">Reset Count</button>
+      <h3>Previous Counts:</h3>
+      <div class="prev-counts-el"></div>
     </div>
     <script src="./app.js"></script>
   </body>

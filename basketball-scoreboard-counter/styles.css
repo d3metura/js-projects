@@ -1,15 +1,110 @@
+@font-face {
+  font-family: "Cursed Timer ULiL";
+  src: url(./fonts/CursedTimerULiL.woff);
+}
+
+@font-face {
+  font-family: "Verdana";
+  src: url(./fonts/verdana-bold.ttf);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
 }
 
+body {
+  background-color: #1b244a;
+}
+
 .container {
   display: flex;
   gap: 100px;
+  justify-content: center;
+}
+
+.container .count-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.increment-elements {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .prev-counts {
   display: flex;
   justify-content: space-between;
   gap: 50px;
+}
+
+.home-count-el,
+.guest-count-el {
+  font-family: "Cursed Timer ULiL", sans-serif;
+  font-size: 90px;
+  color: #f94f6d;
+  background-color: #080001;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+  margin-top: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.team-title {
+  color: #eeeeee;
+  font-family: "Verdana";
+  font-size: 40px;
+}
+
+.container div span {
+  font-family: "Cursed Timer ULiL", sans-serif;
+  color: #9aabd8;
+  border: 2px solid #9aabd8;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.prev-counts-el {
+  color: #eeeeee;
+  font-family: "Verdana";
+}
+
+.prev-counts-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.prev-counts-container button {
+  color: #f94f6d;
+  background-color: transparent;
+  border: 2px solid #f94f6d;
+  border-radius: 5px;
+  padding: 5px;
+  font-family: "Verdana";
+  font-size: 20px;
+}
+
+.prev-counts-container h3 {
+  color: #eeeeee;
+  font-family: "Verdana";
+  font-size: 20px;
+}
+
+.prev-counts-container h4 {
+  font-family: "Cursed Timer ULiL", sans-serif;
+  color: #9aabd8;
+  font-size: 30px;
 }
