@@ -29,12 +29,12 @@ input.addEventListener("input", function () {
   }
 });
 
-const metersToFeetRatio = 3.28;
-const feetToMetersRatio = 0.3048;
-const litersToGallonsRatio = 0.264172;
-const gallonsToLitersRatio = 3.785411784;
-const kilosToPoundsRatio = 2.2;
-const poundsToKilosRatio = 0.45359237;
+const METERS_TO_FEETRATIO = 3.28;
+const FEET_TO_METERSRATIO = 0.3048;
+const LITERS_TO_GALLONSRATIO = 0.264172;
+const GALLONS_TO_LITERSRATIO = 3.785411784;
+const KILOS_TO_POUNDSRATIO = 2.2;
+const POUNDS_TO_KILOSRATIO = 0.45359237;
 
 let valAsNumber = 0;
 
@@ -44,26 +44,26 @@ valueToConvert.addEventListener("input", function () {
 });
 
 function convert() {
-  if (valAsNumber) {
-    metersToFeet.textContent = `${valAsNumber} meters = ${(
-      valAsNumber * metersToFeetRatio
-    ).toFixed(2)} feet |`;
-    feetToMeters.textContent = `${valAsNumber} meters = ${(
-      valAsNumber * feetToMetersRatio
-    ).toFixed(2)} feet`;
-    litersToGallons.textContent = `${valAsNumber} liters = ${(
-      valAsNumber * litersToGallonsRatio
-    ).toFixed(2)} gallons |`;
-    gallonsToLiters.textContent = `${valAsNumber} gallons = ${(
-      valAsNumber * gallonsToLitersRatio
-    ).toFixed(2)} liters`;
-    kilosToPounds.textContent = `${valAsNumber} pounds = ${(
-      valAsNumber * kilosToPoundsRatio
-    ).toFixed(2)} kilos |`;
-    poundsToKilos.textContent = `${valAsNumber} kilos = ${(
-      valAsNumber * poundsToKilosRatio
-    ).toFixed(2)} pounds`;
-  }
+  if (!valAsNumber) return;
+
+  metersToFeet.textContent = `${valAsNumber} meters = ${(
+    valAsNumber * METERS_TO_FEETRATIO
+  ).toFixed(2)} feet |`;
+  feetToMeters.textContent = `${valAsNumber} meters = ${(
+    valAsNumber * FEET_TO_METERSRATIO
+  ).toFixed(2)} feet`;
+  litersToGallons.textContent = `${valAsNumber} liters = ${(
+    valAsNumber * LITERS_TO_GALLONSRATIO
+  ).toFixed(2)} gallons |`;
+  gallonsToLiters.textContent = `${valAsNumber} gallons = ${(
+    valAsNumber * GALLONS_TO_LITERSRATIO
+  ).toFixed(2)} liters`;
+  kilosToPounds.textContent = `${valAsNumber} pounds = ${(
+    valAsNumber * KILOS_TO_POUNDSRATIO
+  ).toFixed(2)} kilos |`;
+  poundsToKilos.textContent = `${valAsNumber} kilos = ${(
+    valAsNumber * POUNDS_TO_KILOSRATIO
+  ).toFixed(2)} pounds`;
 }
 
-convertBtn.addEventListener("click", convert); // why convert and not convert()?
+convertBtn.addEventListener("click", convert);
