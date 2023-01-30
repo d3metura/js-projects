@@ -1,0 +1,17 @@
+#sidebar {
+  position: absolute;
+  left: -200px;
+  top: 0;
+  bottom: 0;
+  width: 200px;
+  background-color: #eee;
+  transition: left 0.5s;
+}
+
+#sidebar.open {
+  left: 0;
+}
+
+button {
+  float: right;
+}
