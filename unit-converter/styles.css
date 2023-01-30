@@ -1,10 +1,95 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
+  box-sizing: border-box;
+  margin: 0;
+  font-family: sans-serif;
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+body {
+  background-color: #1c1c1c;
+}
+
+#container {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #6943ff;
+  width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#header {
+  height: 285px;
+  margin-bottom: 30px;
+}
+
+#header input {
+  font-size: 60px;
+  font-weight: bolder;
+  width: 150px;
+  text-align: center;
+  padding: 20px 10px;
+  border: 2px solid #b295ff;
+  color: white;
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+#header div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+#header div button {
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 30px;
+  font-size: 16px;
+  margin-top: 24px;
+  color: #3d3d3d;
+}
+
+#title {
+  color: #ffffff;
+  font-weight: bolder;
+  margin-top: 40px;
+}
+
+#converters-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #1f2937;
+  width: 100%;
+  gap: 25px;
+  padding: 25px;
+}
+
+#converters-container div {
+  padding: 25px 0;
+  background-color: #273549;
+  border-radius: 5px;
+}
+
+#converters-container h3 {
+  color: #ccc1ff;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#converters-container span {
+  color: #ffffff;
+  font-size: 14px;
 }

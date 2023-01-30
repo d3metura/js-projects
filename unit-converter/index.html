@@ -8,15 +8,31 @@
     <title>Document</title>
   </head>
   <body>
-    <div>
-      <h1 class="title">Metric/Imperial Unit Conversion</h1>
-      <input type="number" class="input-value" />
-      <button class="convert-btn">Convert</button>
-    </div>
-    <div>
-      <h3>Length (Meter/Feet)</h3>
-      <span class="meters-to-feet">20 meters = 65.616 feet</span> |
-      <span class="feet-to-meters">20 feet = 6.096 meters</span>
+    <div id="container">
+      <div id="header">
+        <h1 id="title">Metric/Imperial Unit Conversion</h1>
+        <div>
+          <input type="number" class="input-value" value="0" />
+          <button class="convert-btn">Convert</button>
+        </div>
+      </div>
+      <div id="converters-container">
+        <div>
+          <h3>Length (Meter/Feet)</h3>
+          <span class="meters-to-feet">20 meters = 65.616 feet |</span>
+          <span class="feet-to-meters">20 feet = 6.096 meters</span>
+        </div>
+        <div>
+          <h3>Volume (Liters/Gallons)</h3>
+          <span class="liters-to-gallons">20 liters = 65.616 gallons |</span>
+          <span class="gallons-to-liters">20 gallons = 6.096 liters</span>
+        </div>
+        <div>
+          <h3>Mass (Kilograms/Pounds)</h3>
+          <span class="kilos-to-pounds">20 kilos = 65.616 pounds |</span>
+          <span class="pounds-to-kilos">20 pounds = 6.096 kilos</span>
+        </div>
+      </div>
     </div>
     <script src="app.js"></script>
   </body>
