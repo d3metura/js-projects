@@ -1,14 +1,70 @@
-const characters=["A","B","C","D","E","F","G",
-"H","I","J","K","L","M","N","O","P","Q","R",
-"S","T","U","V","W","X","Y","Z","a","b","c",
-"d","e","f","g","h","i","j","k","l","m","n",
-"o","p","q","r","s","t","u","v","w","x","y",
-"z", "0", "1", "2", "3", "4", "5", "6", "7",
- "8", "9"];
+const characters = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+  "0",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+];
 
 const generateButtonEl = document.querySelector(".generate-button-el");
-const numOfPasswords = document.querySelector(".num-of-passwords")
-// const passwordElements = document.querySelectorAll(".password");
+const numOfPasswords = document.querySelector(".num-of-passwords");
 
 let passwordLength = 10;
 
@@ -23,25 +79,15 @@ function generateRandomPassword() {
 }
 
 function generatePasswords() {
-  const numberOfPasswords = parseInt(document.getElementById('number').value);
-  const passwordDisplay = document.getElementById('passwords');
-  passwordDisplay.innerHTML = '';
-  
+  const numberOfPasswords = parseInt(document.getElementById("number").value);
+  const passwordDisplay = document.getElementById("passwords");
+  passwordDisplay.innerHTML = "";
+  let passwordsHtml = "";
   for (let i = 0; i < numberOfPasswords; i++) {
     const password = generateRandomPassword();
-    passwordDisplay.innerHTML += `<p>${i+1}) ${password}</p>`;
+    passwordsHtml += `<p>${i + 1}) ${password}</p>`;
   }
+  passwordDisplay.innerHTML = passwordsHtml;
 }
 
 generateButtonEl.addEventListener("click", generatePasswords);
-
-// if we waneted to generate exactly the amount of passwords that we have elements with class="password"
-//
-// function generatePasswords() {
-//   for (let i = 0; i < passwordElements.length; i++) {
-//     passwordElements[i].textContent = generateRandomPassword();
-//   }
-//   numOfPasswords.textContent = `Number of Passwords Generated: ${passwordElements.length}`
-// }
-
-// generateButtonEl.addEventListener("click", generatePasswords);
