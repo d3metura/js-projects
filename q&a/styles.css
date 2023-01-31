@@ -1,0 +1,24 @@
+.answer {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20%;
+}
+
+.questionContainer {
+  width: 500px;
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+}
