@@ -1,52 +1,42 @@
 import { dishes } from "./data.js";
 
-const menuContainer = document.getElementById("menu-container");
-const menuTabs = document.getElementById("menu-tabs");
+const dishesContainer = document.getElementById("dishes-container");
+const tabsContainer = document.getElementById("tabs-container");
+const categoryNames = ["all", ...new Set(dishes.map((item) => item.category))];
+let selectedCategory = "all";
 
-function renderTabs() {
-  const tabs = ["All", ...new Set(dishes.map((item) => item.category))];
-  console.log(tabs);
+function loadCategories() {
   let tabsHTML = "";
-  tabs.forEach((tab) => {
-    addEventListener("click", () => console.log(tab));
-    tabsHTML += `<p>${tab}</p>`;
+  categoryNames.forEach((category) => {
+    tabsHTML += `<p class="category-el">${category}</p>`;
   });
-  menuTabs.innerHTML = tabsHTML;
+  tabsContainer.innerHTML = tabsHTML;
 }
 
-function renderMenu() {
-  let menuHTML = "";
-  dishes.forEach((item) => {
-    menuHTML += `
-      <div class="menu-item">
-        <img src="${item.img}" alt="${item.title}">
-        <h3>${item.title}</h3>
-        <p>${item.category}</p>
-        <p>$${item.price}</p>
-      </div>
-    `;
-  });
-  menuContainer.innerHTML = menuHTML;
-}
+loadCategories();
 
-function onCategoryChange() {
-  let menuHTML = "";
-  dishes.forEach((item) => {
-    if (item.category === category) {
-      menuHTML += `
-      <div class="menu-item">
-      <img src="${item.img}" alt="${item.title}">
-      <h3>${item.title}</h3>
-      <p>${item.category}</p>
-      <p>$${item.price}</p>
-      </div>
-      `;
+const categoryElements = document.querySelectorAll(".category-el");
+
+categoryElements.forEach((category) => {
+  category.addEventListener("click", function () {
+    selectedCategory = category.textContent;
+    console.log(selectedCategory);
+    loadDishes();
+  });
+});
+
+function loadDishes() {
+  let dishesHTML = "";
+  dishes.forEach((dish) => {
+    if (dish.category == selectedCategory || selectedCategory == "all") {
+      dishesHTML += `<p>${dish.category}</p>`;
     }
   });
-  menuContainer.innerHTML = menuHTML;
+  dishesContainer.innerHTML = dishesHTML;
 }
 
-window.onload = () => {
-  renderTabs();
-  renderMenu();
-};
+// buttons.forEach(function(button) {
+//   button.addEventListener('click', function() {
+//     console.log('Button clicked');
+//   });
+// });
