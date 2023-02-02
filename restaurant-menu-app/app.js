@@ -5,38 +5,36 @@ const tabsContainer = document.getElementById("tabs-container");
 const categoryNames = ["all", ...new Set(dishes.map((item) => item.category))];
 let selectedCategory = "all";
 
-function loadCategories() {
-  let tabsHTML = "";
-  categoryNames.forEach((category) => {
-    tabsHTML += `<p class="category-el">${category}</p>`;
-  });
-  tabsContainer.innerHTML = tabsHTML;
-}
-
 loadCategories();
-
-const categoryElements = document.querySelectorAll(".category-el");
-
-categoryElements.forEach((category) => {
-  category.addEventListener("click", function () {
-    selectedCategory = category.textContent;
-    console.log(selectedCategory);
-    loadDishes();
-  });
-});
+loadDishes();
 
 function loadDishes() {
-  let dishesHTML = "";
+  dishesContainer.innerHTML = "";
   dishes.forEach((dish) => {
-    if (dish.category == selectedCategory || selectedCategory == "all") {
-      dishesHTML += `<p>${dish.category}</p>`;
+    if (selectedCategory == dish.category || selectedCategory == "all") {
+      const dishElement = document.createElement("div");
+
+      dishElement.innerHTML = `<div>${dish.title}</div> <div>$${dish.price}</div>`;
+      dishElement.onclick = () => logTitle(dish.title);
+      dishesContainer.appendChild(dishElement);
     }
   });
-  dishesContainer.innerHTML = dishesHTML;
 }
 
-// buttons.forEach(function(button) {
-//   button.addEventListener('click', function() {
-//     console.log('Button clicked');
-//   });
-// });
+function selectCategory(category) {
+  selectedCategory = category;
+  loadDishes();
+}
+
+function logTitle(title) {
+  console.log(title);
+}
+
+function loadCategories() {
+  categoryNames.forEach((category) => {
+    let categoryButton = document.createElement("p");
+    categoryButton.textContent = category;
+    categoryButton.onclick = () => selectCategory(category);
+    tabsContainer.appendChild(categoryButton);
+  });
+}
