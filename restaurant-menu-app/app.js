@@ -13,9 +13,7 @@ function loadDishes() {
   dishes.forEach((dish) => {
     if (selectedCategory == dish.category || selectedCategory == "all") {
       const dishElement = document.createElement("div");
-
       dishElement.innerHTML = `<div>${dish.title}</div> <div>$${dish.price}</div>`;
-      dishElement.onclick = () => logTitle(dish.title);
       dishesContainer.appendChild(dishElement);
     }
   });
@@ -24,10 +22,6 @@ function loadDishes() {
 function selectCategory(category) {
   selectedCategory = category;
   loadDishes();
-}
-
-function logTitle(title) {
-  console.log(title);
 }
 
 function loadCategories() {
