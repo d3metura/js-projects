@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: #f2f0f0;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  justify-content: space-between;
+}
+
+.tabs-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.tabs-container span {
+  flex: 1;
+  text-align: center;
+  padding: 20px 0;
+  background-color: #dbdbdb;
+}
